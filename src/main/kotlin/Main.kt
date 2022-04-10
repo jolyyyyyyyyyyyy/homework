@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
         }
         class Book(name: String){
 
-                fun Book(wordCount: Int): Unit {
+                fun book(wordCount: Int): Unit {
                     if (wordCount < 1000)
                         println("Flash Fiction")
                     else if (wordCount < 7500) {
@@ -28,20 +28,20 @@ fun main(args: Array<String>) {
                 }
         }
         class Magazine(){
-            fun Magazine(): Unit {
+            fun magazine(): Unit {
                 println("Magazine")
             }
         }
 
         fun buy(){
-            var Publication: String = "n"
+            var publication: String = "n"
             n = notnull.toString()
             println("The purchase is complete. The purchase amount was $price")
         }
 
-        fun Book() {
-            var a: String? = null
-            var b: Int? = 25
+        fun book() {
+            val a: String? = null
+            val b: Int? = 25
             a?.let {
                 print(a.length)
             }
