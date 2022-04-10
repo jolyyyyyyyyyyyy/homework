@@ -11,10 +11,9 @@ fun main(args: Array<String>) {
             var wordCount1: Int
         }
 
-        fun getType(text: String): String? {
-            return null
-        }
-        class Book(name: String){
+        fun getType(text: String): String
+    }
+        abstract class Book(name: String) : Publication {
 
                 fun book(wordCount: Int): Unit {
                     if (wordCount < 1000)
@@ -27,7 +26,7 @@ fun main(args: Array<String>) {
                     }
                 }
         }
-        class Magazine(){
+        abstract class Magazine() : Publication {
             fun magazine(): Unit {
                 println("Magazine")
             }
@@ -35,7 +34,8 @@ fun main(args: Array<String>) {
 
         fun buy(){
             var publication: String = "n"
-            n = notnull.toString()
+            var n = notnull.toString()
+            val price = 100
             println("The purchase is complete. The purchase amount was $price")
         }
 
@@ -49,5 +49,5 @@ fun main(args: Array<String>) {
                 print (buy())
             }
         }
-    }
+
 
