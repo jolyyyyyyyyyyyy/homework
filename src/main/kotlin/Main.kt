@@ -36,7 +36,7 @@ fun main(args: Array<String>) {
             var publication: String = "n"
             var n = notnull.toString()
             val price = 100
-            println("The purchase is complete. The purchase amount was $price")
+            println("The  purchase is complete. The purchase amount was $price")
         }
 
         fun book() {
