@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
 
-    val bookOne: Book? = null
+  val bookOne: Book? = null
     val bookTwo: Book? =Book(price =10, wordCount = 900)
 
     bookOne?.let {
@@ -40,7 +40,3 @@ class Magazine(override val price: Int, override val wordCount: Int) : Publicati
     override fun getType() =
         "Magazine"
         }
-
-
-
-
