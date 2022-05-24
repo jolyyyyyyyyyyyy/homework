@@ -1,53 +1,46 @@
 fun main(args: Array<String>) {
-    println("Program arguments: ${args.joinToString()}")
-}
-    interface Publication {
-        abstract val notnull: Any
-        abstract var n: Any
-        val price: Int
-        val wordCount: Int
 
-        fun wordCount1() {
-            var wordCount1: Int
-        }
+    val bookOne: Book? = null
+    val bookTwo: Book? =Book(price =10, wordCount = 900)
 
-        fun getType(text: String): String
+    bookOne?.let {
+        buy(it)
     }
-        abstract class Book(name: String) : Publication {
+    bookTwo?.let {
+        buy(it)
+    }
 
-                fun book(wordCount: Int): Unit {
-                    if (wordCount < 1000)
-                        println("Flash Fiction")
-                    else if (wordCount < 7500) {
-                        println("Short Story")
+}
+
+fun buy(publication: Publication) {
+    println("The  purchase is complete." +
+            "The purchase amount was ${publication.price}")
+}
+
+interface Publication {
+    val price: Int
+    val wordCount: Int
+
+    fun getType(): String
+
+    }
+
+class Book(override val price: Int, override val wordCount: Int) : Publication {
+    override fun getType() =
+        when {
+            wordCount <= 1000 -> "Flash Fiction"
+            wordCount <= 7500 -> "Short Story"
+            else -> {
+                "Novel"
             }
-                    else {
-                        println("Novel")
-                    }
-                }
         }
-        abstract class Magazine() : Publication {
-            fun magazine(): Unit {
-                println("Magazine")
-            }
+    }
+
+class Magazine(override val price: Int, override val wordCount: Int) : Publication {
+    override fun getType() =
+        "Magazine"
         }
 
-        fun buy(){
-            var publication: String = "n"
-            var n = notnull.toString()
-            val price = 100
-            println("The  purchase is complete. The purchase amount was $price")
-        }
 
-        fun book() {
-            val a: String? = null
-            val b: Int? = 25
-            a?.let {
-                print(a.length)
-            }
-            b?.let {
-                print (buy())
-            }
-        }
 
 
